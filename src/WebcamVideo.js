@@ -17,6 +17,7 @@ export default function WebcamVideo() {
   );
 
   const handleStartCaptureClick = React.useCallback(() => {
+    if(!webcamRef.current.stream)return console.log('null shudam ke');
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
       mimeType: "video/webm",
@@ -65,6 +66,9 @@ export default function WebcamVideo() {
         mirrored={true}
         ref={webcamRef}
         videoConstraints={videoConstraints}
+        style={{backgroundColor:'blue'}}
+      
+         
       />
       {capturing ? (
         <button onClick={handleStopCaptureClick}>Stop Capture</button>

@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div className="App">
-      <WebcamImage/>
-      {/* <WebcamVideo/> */}
+      {/* <WebcamImage/> */}
+      <WebcamVideo/>
     </div>
   );
 }
